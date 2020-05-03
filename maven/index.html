@@ -12,22 +12,26 @@
             margin: 0;
             background-image: url(ice.png);
             font-size: 1.1em;
+            text-align: center;
         }
         
-        #toptitle {
-            text-align: center;
-            font-size: 3.2em;
+        .title-big-white {
+            font-size: 3em;
             color: white;
         }
         
         .largecentertext {
-            text-align: center;
             font-size: 2em;
             color: white;
         }
         
-        .blank {
-            margin-top: 3cm;
+        #repolink {
+            width: 900px;
+            height: 50px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 5px 5px 5px rgb(126, 173, 245);
+            background-image: linear-gradient(to bottom right, #68bafd, #93bcdf);
         }
         
         #repolink table {
@@ -35,32 +39,45 @@
         }
         
         #repolink table tr td {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: white;
         }
         
         #repolink table tr td div {
-            padding: 0.1cm;
-            border-style: groove;
-            background-color: white;
-            color: black;
+            padding: 3px;
+            border-bottom: 2px rgb(204, 239, 255) solid;
+            background-color: transparent;
+            color: white;
         }
         
         #repolink table tr td button {
-            width: 3cm;
-            height: 1cm;
-            border-radius: 0.5cm;
+            width: 120px;
+            height: 40px;
+            border-radius: 50px;
             border-style: solid;
             background-color: #9d82ff;
             color: white;
+        }
+        
+        #repolink table tr td button:hover {
+            background-color: #b5a2f7;
+        }
+        
+        #repolist {
+            width: 1050px;
+            margin: auto;
+            padding: 20px 10px 20px 10px;
+            box-shadow: 5px 5px 5px rgb(126, 173, 245);
+            background-image: linear-gradient(to bottom right, #68bafd, #93bcdf);
         }
         
         #repolist table {
             margin: auto;
             text-align: center;
             border-collapse: collapse;
-            background-color: white;
-            border-color: #c4c2c2;
+            background-color: rgb(204, 239, 255);
+            border: 2px rgb(143, 162, 245) solid;
+            color: black;
         }
         
         #repolist table td {
@@ -69,8 +86,8 @@
         }
     </style>
 
-    <div class="blank" />
-    <div id="toptitle">Cuckoo Dev Team中心仓库</div>
+    <div style="margin-top: 100px;" />
+    <div class="title-big-white">Cuckoo Dev Team中心仓库</div>
     <div class="largecentertext">
         <br> 你可以从这里获取我们的API包 <br><br>
     </div>
@@ -79,7 +96,7 @@
         <table border="0">
             <tr>
                 <td>
-                    请导入我们的仓库：
+                    导入我们的仓库：
                 </td>
                 <td>
                     <div>maven { url = "https://zi-jing.github.io/cuckoo-maven/maven" }</div>

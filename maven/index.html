@@ -10,13 +10,22 @@
     <style>
         body {
             margin: 0;
-            background-image: url(ice.png);
+            background-image: url(planks_spruce.png);
             font-size: 1.1em;
             text-align: center;
         }
         
-        .title-big-white {
+        button:focus {
+            outline: 0;
+        }
+        
+        button::-moz-focus-inner {
+            border: 0;
+        }
+        
+        h1 {
             font-size: 3em;
+            font-weight: 500;
             color: white;
         }
         
@@ -30,8 +39,8 @@
             height: 50px;
             margin: auto;
             padding: 10px;
-            box-shadow: 5px 5px 5px rgb(126, 173, 245);
-            background-image: linear-gradient(to bottom right, #68bafd, #93bcdf);
+            box-shadow: 5px 5px 5px #071c3a5e;
+            background-image: linear-gradient(to bottom right, #82c3f84b, #a6c2da4b);
         }
         
         #repolink table {
@@ -45,7 +54,7 @@
         
         #repolink table tr td div {
             padding: 3px;
-            border-bottom: 2px rgb(204, 239, 255) solid;
+            border-bottom: 2px #ccefff solid;
             background-color: transparent;
             color: white;
         }
@@ -59,25 +68,52 @@
             color: white;
         }
         
+        #repolink table tr td button {
+            animation-duration: 0.5s;
+            animation-name: buttonLeft;
+        }
+        
         #repolink table tr td button:hover {
             background-color: #b5a2f7;
+            animation-duration: 0.5s;
+            animation-name: buttonHover;
+        }
+        
+        @keyframes buttonHover {
+            from {
+                background-color: #9d82ff;
+            }
+            to {
+                background-color: #b5a2f7;
+            }
+        }
+        
+        @keyframes buttonLeft {
+            from {
+                background-color: #b5a2f7;
+            }
+            to {
+                background-color: #9d82ff;
+            }
         }
         
         #repolist {
             width: 1050px;
             margin: auto;
             padding: 20px 10px 20px 10px;
-            box-shadow: 5px 5px 5px rgb(126, 173, 245);
-            background-image: linear-gradient(to bottom right, #68bafd, #93bcdf);
+            box-shadow: 5px 5px 5px #071c3a5e;
+            background-image: linear-gradient(to bottom right, #82c3f84b, #a6c2da4b);
         }
         
         #repolist table {
             margin: auto;
+            margin-top: 8px;
+            margin-bottom: 8px;
             text-align: center;
             border-collapse: collapse;
-            background-color: rgb(204, 239, 255);
-            border: 2px rgb(143, 162, 245) solid;
-            color: black;
+            background-color: #78c3e62a;
+            border: 2px #c7cff15e solid;
+            color: white;
         }
         
         #repolist table td {
@@ -87,7 +123,7 @@
     </style>
 
     <div style="margin-top: 100px;" />
-    <div class="title-big-white">Cuckoo Dev Team中心仓库</div>
+    <h1>Cuckoo Dev Team中心仓库</h1>
     <div class="largecentertext">
         <br> 你可以从这里获取我们的API包 <br><br>
     </div>
@@ -102,7 +138,7 @@
                     <div>maven { url = "https://zi-jing.github.io/cuckoo-maven/maven" }</div>
                 </td>
                 <td>
-                    <button onclick="copyRepoLink()">点我复制</button>
+                    <button onclick="copyRepoLink()">复制</button>
                 </td>
             </tr>
         </table>
@@ -142,7 +178,7 @@
         }
 
         function copyRepoLink() {
-            copy("https://zi-jing.github.io/cuckoo-maven/maven");
+            copy("maven { url = \"https://zi-jing.github.io/cuckoo-maven/maven\" }");
         }
     </script>
 </body>

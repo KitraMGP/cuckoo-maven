@@ -1,0 +1,153 @@
+/* ----------全局样式---------- */
+
+body {
+    margin: 0;
+    background-image: url(planks_spruce.png);
+    font-size: 1.1em;
+    text-align: center;
+    font-family: "Microsoft YaHei", "微软雅黑", "Open Sans", Arial, sans-serif, Impact, "Segoe UI"
+}
+
+
+/* 隐藏按钮单击时的边框 */
+
+button:focus {
+    outline: 0;
+}
+
+
+/* 隐藏按钮单击时的边框(Firefox) */
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 500;
+    color: white;
+}
+
+.subtitle {
+    font-size: 2em;
+    color: white;
+}
+
+.code {
+    font-family: Consolas;
+}
+
+table,
+table tr th,
+table tr td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: 2px #c7cff15e solid;
+    text-align: center;
+}
+
+
+/* 仅用于table */
+
+.no-border,
+.no-border tr th,
+.no-border tr td {
+    border: none;
+}
+
+
+/* 渐变背景 */
+
+.gradient-background {
+    background-image: linear-gradient(to bottom right, #82c3f845, #a6c2da45);
+}
+
+
+/* ----------仓库链接部分---------- */
+
+#repolink {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 6px 6px 6px #071c3a5e;
+    color: white;
+}
+
+
+/* 文本: "导入我们的仓库:" */
+
+#repolink table tr td {
+    font-size: 1.1em;
+}
+
+
+/* 仓库链接代码 */
+
+#repolink table tr td div {
+    padding: 3px;
+    border-bottom: 2px #ccefff solid;
+    background-color: transparent;
+    width: fit-content;
+}
+
+
+/* 复制按钮 */
+
+#repolink table tr td button {
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    border-style: solid;
+    background-color: #9d82ff;
+    color: white;
+}
+
+
+/* 动画效果 */
+
+#repolink table tr td button {
+    transition-duration: 0.5s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+}
+
+#repolink table tr td button:hover {
+    background-color: #b5a2f7;
+}
+
+
+/* ----------仓库列表---------- */
+
+#repolist-block {
+    width: fit-content;
+    margin: auto;
+    padding: 20px 10px 20px 10px;
+    box-shadow: 6px 6px 6px #071c3a5e;
+}
+
+#repotable {
+    margin: auto;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: #78c3e62a;
+    color: white;
+}
+
+#repotable td {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 200px;
+}
+
+.repotable-placeholder-row {
+    min-width: 120px;
+    height: 0px;
+}
+
+#repolist-load-status {
+    margin-top: 20px;
+    color: white;
+    font-size: 2em;
+}

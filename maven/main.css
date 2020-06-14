@@ -126,8 +126,30 @@ table tr td {
     box-shadow: 6px 6px 6px #071c3a5e;
 }
 
+#repotable-toolbar {
+    margin-top: -15px;
+    height: 24px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: white;
+    font-size: 1em;
+}
+
+#repotable-toolbar-back {
+    width: min-content;
+}
+
+#repotable-toolbar-refresh {
+    width: min-content;
+}
+
+#repotable-toolbar-desc {
+    margin-top: -7px;
+    text-align: right;
+    font-size: 1.2em;
+}
+
 #repotable {
-    margin: auto;
     margin: auto;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -139,6 +161,14 @@ table tr td {
     padding-left: 15px;
     padding-right: 15px;
     min-width: 200px;
+}
+
+#repotable .repotable-arrow-down {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    width: min-content;
 }
 
 .repotable-placeholder-row {

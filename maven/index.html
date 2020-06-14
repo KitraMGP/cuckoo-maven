@@ -37,6 +37,30 @@
     <br>
 
     <div id="repolist-block" class="gradient-background">
+        <div id="repotable-toolbar">
+            <table class="no-border">
+                <tr>
+                    <td>
+                        <div onclick="back()" onmousemove="setRepolistToolbarDesc('返回至上一级')" onmouseout="setRepolistToolbarDescDefault()" title="返回" id="repotable-toolbar-back">
+                            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2633" width="36" height="36"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#ffffff" p-id="2634"></path></svg>
+                        </div>
+                    </td>
+                    <td>
+                        <div onclick="refreshArtifactList()" onmousemove="setRepolistToolbarDesc('刷新仓库列表')" onmouseout="setRepolistToolbarDescDefault()" title="刷新" id="repotable-toolbar-refresh">
+                            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2321" width="32" height="32"><path d="M816.512 368.192l-55.36 32A285.632 285.632 0 0 1 800 544c0 158.816-129.184 288-288 288-106.368 0-199.264-58.144-249.12-144.16A285.856 285.856 0 0 1 224 544c0-158.816 129.216-288 288-288v96l192-128-192-128v96C317.92 192 160 349.888 160 544c0 64.064 17.504 124 47.52 175.808C268.48 824.96 381.984 896 512 896c194.112 0 352-157.92 352-352 0-64.064-17.472-124-47.488-175.808" fill="#ffffff" p-id="2322"></path></svg>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="repotable-toolbar-desc">
+
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
         <table id="repotable">
 
             <tr>

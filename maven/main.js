@@ -1,5 +1,5 @@
 window.__proto__.__APP_STATE__ = new Object();
-window.__APP_STATE__.__proto__.artifactList = [];
+window.__APP_STATE__.__proto__.jsonCache = new Object();
 window.__APP_STATE__.__proto__.defaultRepoTable = document.getElementById("repotable");
 window.__APP_STATE__.__proto__.placeHolder = document.getElementById("repotable-placeholder");
 window.__APP_STATE__.__proto__.isShowingArchives = false;
@@ -40,6 +40,7 @@ function fetchArtifactsJson() {
             }
         }
     });
+    req.setRequestHeader("Is-Modified-Since", "0");
     req.open("GET", "artifacts.json");
     req.send();
 }
@@ -47,6 +48,7 @@ function fetchArtifactsJson() {
 function parseArtifactJson(content) {
     updateStatus("解析中，请稍候...");
     var artifactsJson = JSON.parse(content).artifacts;
+    window.__APP_STATE__.jsonCache = content;
     for (i = 0; i < artifactsJson.length; i++) {
         var artifact = artifactsJson[i];
         var tdName = document.createElement("td");
@@ -62,8 +64,6 @@ function parseArtifactJson(content) {
         trArtifactItem.appendChild(tdDesc);
         trArtifactItem.appendChild(createArrowDowmTd());
         document.getElementById("repotable").appendChild(trArtifactItem);
-        var artifactObj = createArtifact(artifact.name, artifact.group, artifact.description, artifact.archives);
-        window.__APP_STATE__.artifactList.push(artifactObj);
         updateElementPositions();
     }
     document.getElementById("repotable-placeholder").remove();
@@ -87,18 +87,6 @@ function updateStatus(status) {
     updateElementPositions();
     var hStatus = document.getElementById("repolist-load-status");
     hStatus.innerText = status;
-}
-
-function createArtifact(name, group, description, artifacts) {
-    var artifact = new Object();
-    artifact.__proto__.name = name;
-    artifact.__proto__.group = group;
-    artifact.__proto__.description = description;
-    artifact.__proto__.archives = [];
-    for (i = 0; i < archives.length; i++) {
-        artifact.archives.add(archives[i]);
-    }
-    return artifact;
 }
 
 function clearArtifactList() {
@@ -128,7 +116,12 @@ function refreshArtifactList() {
 
 function back() {
     if (window.__APP_STATE__.isShowingArchives) {
-
+        clearArtifactList();
+        addPlaceHolderArtifact();
+        parseArtifactJson(window.__APP_STATE__.jsonCache);
+        window.__APP_STATE__.isShowingArchives = false;
+    } else {
+        setRepolistToolbarDesc("已经在第一级，无法返回");
     }
 }
 

@@ -40,8 +40,8 @@ function fetchArtifactsJson() {
             }
         }
     });
-    req.setRequestHeader("Is-Modified-Since", "0");
     req.open("GET", "artifacts.json");
+    req.setRequestHeader("Is-Modified-Since", "0");
     req.send();
 }
 

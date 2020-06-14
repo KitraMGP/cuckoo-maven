@@ -41,7 +41,7 @@ function fetchArtifactsJson() {
         }
     });
     req.open("GET", "artifacts.json");
-    req.setRequestHeader("Is-Modified-Since", "0");
+    req.setRequestHeader("If-Modified-Since", "0");
     req.send();
 }
 

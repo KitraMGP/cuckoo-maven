@@ -62,7 +62,8 @@ function parseArtifactJson(content) {
         trArtifactItem.appendChild(tdName);
         trArtifactItem.appendChild(tdGroup);
         trArtifactItem.appendChild(tdDesc);
-        trArtifactItem.appendChild(createArrowDowmTd());
+        trArtifactItem.appendChild(createArrowDownTd());
+        trArtifactItem.setAttribute("artifactIndex", i);
         document.getElementById("repotable").appendChild(trArtifactItem);
         updateElementPositions();
     }
@@ -125,6 +126,10 @@ function back() {
     }
 }
 
+function enterArtifact(artifactIndex) {
+    console.log(artifactIndex);
+}
+
 function updateElementPositions() {
     var eRepolistBlock = document.getElementById("repotable");
     var eRepolistToolbarDesc = document.getElementById("repotable-toolbar-desc");
@@ -151,12 +156,17 @@ function appendArrowDownElement(parent) {
     parent.innerHTML = parent.innerHTML + '<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3188" width="36" height="36"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#ffffff" p-id="3189"></path></svg>';
 }
 
-function createArrowDowmTd() {
+function createArrowDownTd() {
     var e = document.createElement("td");
     appendArrowDownElement(e);
     e.setAttribute("class", "repotable-arrow-down");
+    e.setAttribute("onclick", "enterArtifact(this.parentElement.getAttribute('artifactIndex'))");
     e.setAttribute("onmousemove", "setRepolistToolbarDesc('点击查看详细信息')");
     e.setAttribute("onmouseout", "setRepolistToolbarDescDefault()");
     e.setAttribute("title", "点击查看详细信息");
     return e;
+}
+
+function createArtifactTable(artifactsJson) {
+
 }

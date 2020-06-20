@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.github.zi_jing.cuckoolib</groupId>
-  <artifactId>CuckooLib</artifactId>
+  <groupId>com.github.zi_jing.cuckoogradle</groupId>
+  <artifactId>CuckooGradle</artifactId>
   <versioning>
     <release>1.0.1</release>
     <versions>
-      <version>1.0.0</version>
       <version>1.0.1</version>
     </versions>
-    <lastUpdated>20200620164820</lastUpdated>
+    <lastUpdated>20200620164846</lastUpdated>
   </versioning>
 </metadata>

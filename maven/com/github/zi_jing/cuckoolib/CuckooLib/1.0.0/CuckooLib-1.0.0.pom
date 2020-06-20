@@ -5,4 +5,5 @@
   <groupId>com.github.zi_jing.cuckoolib</groupId>
   <artifactId>CuckooLib</artifactId>
   <version>1.0.0</version>
+  <description>The Cuckoo commons library.</description>
 </project>

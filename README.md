@@ -1,5 +1,7 @@
 # cuckoo-maven
 
+## 该仓库已弃用
+
 CuckooMaven是一个以Github Pages驱动的maven仓库，用于分发Cuckoo Dev Team的构件。
 
 它使用[CuckooGradle](https://github.com/zi-jing/CuckooGradle)来生成一个自定义的Json文件(`artifacts.json`)以便于其他程序解析。
